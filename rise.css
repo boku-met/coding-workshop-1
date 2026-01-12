@@ -1,0 +1,18 @@
+/* Let slides scroll vertically when content is tall */
+.reveal .slides section {
+overflow-y: auto !important;
+}
+
+/* Make inputs/outputs scroll within the viewport */
+.reveal .slides section .input,
+.reveal .slides section .output_wrapper,
+.reveal .slides section pre {
+/* max-height: 70vh; */   /* adjust as you like */
+overflow: auto;
+}
+
+/* Keep CodeMirror from forcing a fixed height */
+.reveal .slides section .CodeMirror {
+height: auto !important;
+/* max-height: 70vh; */
+}
