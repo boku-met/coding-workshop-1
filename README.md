@@ -22,8 +22,13 @@ helpers](https://git-scm.com/doc/credential-helpers). The simplest way
 is using the GitHub command line tool [`gh`](https://cli.github.com/).
 After installation, do `gh auth login` whenever you want to install some
 repository with anything similar to `pip install
-git+https://github.com/boku-met/...`. To verify that you are good to go,
-try running the below:
+git+https://github.com/boku-met/...`. This will save an authentication
+token into your local environment[^1]. You will be asked to provide this
+token. It can be obtained in the "developer settings" of your GitHub
+account. Please find detailed instructions online, for example, in the
+[GitHub
+docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+To verify that you are good to go, try running the below:
 
 ```shell
 conda create -n tmp pip
@@ -37,3 +42,10 @@ you can also use a conda environment with Jupyter installed and a
 browser. In that case, run `jupyter lab` or `jupyter notebook
 <notebook>.ipynb` and follow the instructions to access it in your
 browser.
+
+[^1]: The token is saved as plain text. This is a security risk. That is
+why it makes sense to limit its life time and restrict it to the
+resource you need to have access to. You will be asked to make these
+choices when creating it. However, try to balance the risk of someone
+obtaining the token (and having access to our shared GitHub account) and
+the hassle of overly tight restrictions.
